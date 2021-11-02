@@ -84,6 +84,78 @@ object Twiddler {
         def to(p: P): Out = i(Tuple.fromProductTyped(p)) match { case (a, b, c, d, e, f) => a ~ b ~ c ~ d ~ e ~ f }
         def from(o: Out): P = o match { case a ~ b ~ c ~ d ~ e ~ f => m.fromProduct((a, b, c, d, e, f)) }
       }
+  
+  implicit def product7[P <: Product, A, B, C, D, E, F, U](
+    implicit m: Mirror.ProductOf[P],
+             i: m.MirroredElemTypes =:= (A, B, C, D, E, F, U)
+    ): Twiddler[P] { type Out = A ~ B ~ C ~ D ~ E ~ F ~ U } =
+      new Twiddler[P] {
+        type Out = A ~ B ~ C ~ D ~ E ~ F ~ U
+        def to(p: P): Out = i(Tuple.fromProductTyped(p)) match {
+          case (a, b, c, d, e, f, u) => a ~ b ~ c ~ d ~ e ~ f ~ u }
+        def from(o: Out): P = o match {
+          case a ~ b ~ c ~ d ~ e ~ f ~ u => m.fromProduct((a, b, c, d, e, f, u)) }
+      }
+
+  implicit def product8[P <: Product, A, B, C, D, E, F, U, V](
+    implicit m: Mirror.ProductOf[P],
+             i: m.MirroredElemTypes =:= (A, B, C, D, E, F, U, V)
+    ): Twiddler[P] { type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V } =
+      new Twiddler[P] {
+        type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V
+        def to(p: P): Out = i(Tuple.fromProductTyped(p)) match {
+          case (a, b, c, d, e, f, u, v) => a ~ b ~ c ~ d ~ e ~ f ~ u ~ v }
+        def from(o: Out): P = o match {
+          case a ~ b ~ c ~ d ~ e ~ f ~ u ~ v => m.fromProduct((a, b, c, d, e, f, u, v)) }
+      }
+
+  implicit def product9[P <: Product, A, B, C, D, E, F, U, V, W](
+    implicit m: Mirror.ProductOf[P],
+             i: m.MirroredElemTypes =:= (A, B, C, D, E, F, U, V, W)
+    ): Twiddler[P] { type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V ~ W } =
+      new Twiddler[P] {
+        type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V ~ W
+        def to(p: P): Out = i(Tuple.fromProductTyped(p)) match {
+          case (a, b, c, d, e, f, u, v, w) => a ~ b ~ c ~ d ~ e ~ f ~ u ~ v ~ w }
+        def from(o: Out): P = o match {
+          case a ~ b ~ c ~ d ~ e ~ f ~ u ~ v ~ w => m.fromProduct((a, b, c, d, e, f, u, v, w)) }
+      }
+
+  implicit def product10[P <: Product, A, B, C, D, E, F, U, V, W, X](
+    implicit m: Mirror.ProductOf[P],
+             i: m.MirroredElemTypes =:= (A, B, C, D, E, F, U, V, W, X)
+    ): Twiddler[P] { type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V ~ W ~ X} =
+      new Twiddler[P] {
+        type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V ~ W ~ X
+        def to(p: P): Out = i(Tuple.fromProductTyped(p)) match {
+          case (a, b, c, d, e, f, u, v, w, x) => a ~ b ~ c ~ d ~ e ~ f ~ u ~ v ~ w ~ x }
+        def from(o: Out): P = o match {
+          case a ~ b ~ c ~ d ~ e ~ f ~ u ~ v ~ w ~ x => m.fromProduct((a, b, c, d, e, f, u, v, w, x)) }
+      }
+
+  implicit def product11[P <: Product, A, B, C, D, E, F, U, V, W, X, Y](
+    implicit m: Mirror.ProductOf[P],
+             i: m.MirroredElemTypes =:= (A, B, C, D, E, F, U, V, W, X, Y)
+    ): Twiddler[P] { type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V ~ W ~ X ~ Y } =
+      new Twiddler[P] {
+        type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V ~ W ~ X ~ Y
+        def to(p: P): Out = i(Tuple.fromProductTyped(p)) match {
+          case (a, b, c, d, e, f, u, v, w, x, y) => a ~ b ~ c ~ d ~ e ~ f ~ u ~ v ~ w ~ x ~ y }
+        def from(o: Out): P = o match {
+          case a ~ b ~ c ~ d ~ e ~ f ~ u ~ v ~ w ~ x ~ y => m.fromProduct((a, b, c, d, e, f, u, v, w, x, y)) }
+      }
+
+  implicit def product12[P <: Product, A, B, C, D, E, F, U, V, W, X, Y, Z](
+    implicit m: Mirror.ProductOf[P],
+             i: m.MirroredElemTypes =:= (A, B, C, D, E, F, U, V, W, X, Y, Z)
+    ): Twiddler[P] { type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V ~ W ~ X ~ Y ~ Z } =
+      new Twiddler[P] {
+        type Out = A ~ B ~ C ~ D ~ E ~ F ~ U ~ V ~ W ~ X ~ Y ~ Z
+        def to(p: P): Out = i(Tuple.fromProductTyped(p)) match {
+          case (a, b, c, d, e, f, u, v, w, x, y, z) => a ~ b ~ c ~ d ~ e ~ f ~ u ~ v ~ w ~ x ~ y ~ z }
+        def from(o: Out): P = o match {
+          case a ~ b ~ c ~ d ~ e ~ f ~ u ~ v ~ w ~ x ~ y ~ z => m.fromProduct((a, b, c, d, e, f, u, v, w, x, y, z)) }
+      }
 
 }
 
